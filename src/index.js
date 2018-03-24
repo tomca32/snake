@@ -1,7 +1,4 @@
-import _join from 'lodash/join';
+import style from './index.css';
+import init from './grid';
 
-const arr = ['sdf', 'fds'];
-
-const joinArray = ([a, b]) => _join([a, b]);
-
-console.log(joinArray(arr));
+init(document.getElementById('app'));
