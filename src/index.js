@@ -1,4 +1,4 @@
 import style from './index.css';
-import init from './grid';
+import {initialize} from './grid';
 
-init(document.getElementById('app'));
+initialize(document.getElementById('app'));
