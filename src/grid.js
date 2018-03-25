@@ -1,5 +1,5 @@
 import _debounce from 'lodash/debounce';
-import Wall from './models/wall';
+import Wall from './models/Wall';
 
 let container;
 let canvas;
@@ -64,7 +64,7 @@ function draw() {
   for (let y = 0; y < gridSize.y; y++) {
     for (let x = 0; x < gridSize.x; x++) {
       if (grid[y][x] !== void 0) {
-        grid[y][x].draw()
+        grid[y][x].draw();
       }
     }
   }

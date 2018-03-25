@@ -1,12 +1,14 @@
-import {ctx, tileSize} from '../grid.js';
+import {ctx, tileSize} from '../grid';
 
-export default class Wall {
+export default class Entity {
+  color = 'rgb(0, 0, 0)';
+
   constructor(x, y) {
     this.position = {x, y};
   }
 
   draw() {
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    ctx.fillStyle = this.color;
     ctx.fillRect(this.position.x * tileSize, this.position.y * tileSize, tileSize, tileSize);
   }
 }
