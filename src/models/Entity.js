@@ -1,4 +1,4 @@
-import {ctx, tileSize} from '../grid';
+import {ctx, tileSize} from '../drawing';
 
 export default class Entity {
   color = 'rgb(0, 0, 0)';

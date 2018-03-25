@@ -1,4 +1,6 @@
 import style from './index.css';
-import {initialize} from './grid';
+import {initializeGrid} from './grid';
+import {initializeCanvas} from './drawing';
 
-initialize(document.getElementById('app'));
+initializeGrid();
+initializeCanvas(document.getElementById('app'));
