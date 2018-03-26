@@ -56,5 +56,6 @@ function initializeCanvas(containerElement) {
 export {
   initializeCanvas,
   ctx,
-  tileSize
+  tileSize,
+  redrawCanvas
 }

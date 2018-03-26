@@ -28,11 +28,22 @@ function initializeGrid() {
   for (let i = 0; i < gridSize.x; i++) {
     grid[gridSize.y - 1][i] = new Wall(i, gridSize.y - 1);
   }
-  grid[START_POSITION.y][START_POSITION.x] = new Snake(START_POSITION.x, START_POSITION.y);
+}
+
+function gridGet(x, y) {
+  return grid[y][x];
+}
+
+function gridSet({x, y}, entity) {
+  grid[y][x] = entity;
+  return entity;
 }
 
 export {
   initializeGrid,
   gridSize,
-  grid
+  grid,
+  START_POSITION,
+  gridGet,
+  gridSet
 }
