@@ -30,7 +30,7 @@ function initializeGrid() {
   }
 }
 
-function gridGet(x, y) {
+function gridGet({x, y}) {
   return grid[y][x];
 }
 

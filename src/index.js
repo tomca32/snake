@@ -13,8 +13,11 @@ grid[START_POSITION.y][START_POSITION.x] = snakeHead;
 
 initializeCanvas(document.getElementById('app'));
 
-setTimeout(function step() {
+let loop = setTimeout(function step() {
   snakeHead = snakeHead.step(currentDirection);
+  if (!snakeHead.alive) {
+    return;
+  }
   redrawCanvas();
-  setTimeout(step, STEP_DURATION);
+  loop = setTimeout(step, STEP_DURATION);
 }, STEP_DURATION);
