@@ -26,6 +26,7 @@ function directionRight(position) {
   };
 }
 
+let previousDirection = directionRight;
 let currentDirection = directionRight;
 
 document.addEventListener('keydown', (e) => {
@@ -50,14 +51,18 @@ document.addEventListener('keydown', (e) => {
 });
 
 function isValidDirection(newDirection) {
-  return newDirection(currentDirection({x: 0, y: 0})).x !== 0;
+  return newDirection(previousDirection({x: 0, y: 0})).x !== 0;
 }
 
+function inputStep() {
+  previousDirection = currentDirection;
+}
 
 export {
   directionUp,
   directionDown,
   directionLeft,
   directionRight,
-  currentDirection
+  currentDirection,
+  inputStep
 };

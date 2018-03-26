@@ -2,7 +2,7 @@ import style from './index.css';
 import {grid, initializeGrid, START_POSITION} from './grid';
 import {initializeCanvas, redrawCanvas} from './drawing';
 import Snake from './models/Snake';
-import {currentDirection} from './input';
+import {currentDirection, inputStep} from './input';
 
 const STEP_DURATION = 100;
 
@@ -15,6 +15,7 @@ initializeCanvas(document.getElementById('app'));
 
 let loop = setTimeout(function step() {
   snakeHead = snakeHead.step(currentDirection);
+  inputStep();
   if (!snakeHead.alive) {
     return;
   }
