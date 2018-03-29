@@ -11,9 +11,10 @@ const START_POSITION = {
   y: 15
 };
 
-let grid = [];
+let grid;
 
 function initializeGrid() {
+  grid = [];
   grid.push([]);
   for (let i = 0; i < gridSize.x; i++) {
     new Wall({x: i, y:0});

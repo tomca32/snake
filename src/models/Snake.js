@@ -1,7 +1,7 @@
 import Entity from './Entity';
 import {SNAKE_COLOR} from '../colors';
-import {grid, gridGet, gridSet} from '../grid';
-import {directionLeft} from '../input';
+import {gridGet, gridSet} from '../grid';
+import {currentDirection, directionLeft} from '../input';
 
 export default class Snake extends Entity {
   color = SNAKE_COLOR;

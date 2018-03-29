@@ -2,22 +2,27 @@ import style from './index.css';
 import {initializeGrid, START_POSITION} from './grid';
 import {initializeCanvas, redrawCanvas} from './drawing';
 import Snake from './models/Snake';
-import {currentDirection, inputStep} from './input';
+import {initializeDefaultDirections, inputStep} from './input';
 
 const STEP_DURATION = 100;
 
-initializeGrid();
 
-let snakeHead = new Snake(START_POSITION);
-
-initializeCanvas(document.getElementById('app'));
-
-let loop = setTimeout(function step() {
-  snakeHead = snakeHead.step(currentDirection);
-  inputStep();
-  if (!snakeHead.alive) {
-    return;
-  }
+function startGame() {
+  initializeGrid();
+  let snakeHead = new Snake(START_POSITION);
+  initializeCanvas(document.getElementById('app'));
   redrawCanvas();
-  loop = setTimeout(step, STEP_DURATION);
-}, STEP_DURATION);
+  initializeDefaultDirections();
+
+  let loop = setTimeout(function step() {
+    snakeHead = snakeHead.step(inputStep());
+    redrawCanvas();
+    if (!snakeHead.alive) {
+      return startGame();
+    }
+
+    loop = setTimeout(step, STEP_DURATION);
+  }, STEP_DURATION);
+}
+
+startGame();

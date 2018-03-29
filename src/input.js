@@ -26,12 +26,10 @@ function directionRight(position) {
   };
 }
 
-let previousDirection = directionRight;
-let currentDirection = directionRight;
-// queuedDirection is used for queuing up the next step, for example if the player presses two key strokes in rapid succession
-// with the interval between them faster than the step interval of the main loop, we want to enqueue the second keystroke to fire on the following step
+// queuedDirection is used for queuing up the next inputStep, for example if the player presses two key strokes in rapid succession
+// with the interval between them faster than the inputStep interval of the main loop, we want to enqueue the second keystroke to fire on the following inputStep
 // rather than making it overwrite the current one
-let queuedDirection = void 0;
+let previousDirection, currentDirection, queuedDirection;
 
 document.addEventListener('keydown', (e) => {
   let newDirection;
@@ -69,10 +67,16 @@ function inputStep() {
   if (queuedDirection) {
     currentDirection = queuedDirection;
   }
+  return previousDirection;
 }
 
 function directionChangedThisStep() {
   return currentDirection !== previousDirection;
+}
+
+function initializeDefaultDirections() {
+  previousDirection = currentDirection = directionRight;
+  queuedDirection = void 0;
 }
 
 export {
@@ -80,6 +84,6 @@ export {
   directionDown,
   directionLeft,
   directionRight,
-  currentDirection,
-  inputStep
+  inputStep,
+  initializeDefaultDirections
 };

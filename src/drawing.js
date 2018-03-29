@@ -47,6 +47,9 @@ function resizeCanvas() {
 }
 
 function initializeCanvas(containerElement) {
+  if (canvas !== void 0) {
+    return;
+  }
   createCanvas(containerElement);
   resizeCanvas();
   window.addEventListener('resize', _debounce(resizeCanvas, 50));
