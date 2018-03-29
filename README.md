@@ -18,7 +18,7 @@ Running `yarn run dev` will start the development mode which will watch files an
 - Food
 - Walls
 - Adjustable speed - use the buttons in the top-left corner
-- Pause - press `p`
+- Pause - press `p` and a timer on unpause
 - Immediate restart on death
 
 ## Lessons Learned
