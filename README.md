@@ -49,6 +49,11 @@ Should have done TDD on the movement logic. I managed to, accidentally, break it
 
 ## Things to add or improve on
 
+### Map Editor
+
+There is a potential for the map editor here. Maps could be encoded in text, or even simpler, just a set of coordinates where the walls are located. That can be parsed and initialized by the grid module.
+I have done something similar in my Pacman game which you can find on my [github](https://github.com/tomca32/).
+
 ### Replays
 
 It shouldn't be too difficult to keep a history of the snake's movement. We already keep a previous movement direction on every step in the `input` module; this can be changed to an array and just keep pushing directions into it on every step thus giving us a history of the snake's movement.
