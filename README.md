@@ -34,8 +34,12 @@ In both cases, the user did exactly the same thing, they pressed two keys in rap
 The solution is to enable queuing up the following direction change even if the current one didn't execute yet. This complicates code a bit but makes for a much better UX.
 
 
-## Things to improve on
+## Things to add or improve on
 
-### Rendering
+### Replays
+
+It shouldn't be too difficult to keep a history of the snake's movement. We already keep a previous movement direction on every step in the `input` module; this can be changed to an array and just keep pushing directions into it on every step thus giving us a history of the snake's movement.
+
+### Rendering Optimization
 
 Current rendering code is a nested loop that goes through all the tiles and rerenders them on each frame. This is O(n^2) and can be slow on large maps. Snake is a simple enough game for this to be unnoticeable but it can still be improved.
