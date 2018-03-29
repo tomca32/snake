@@ -62,6 +62,10 @@ I have done something similar in my Pacman game which you can find on my [github
 
 It shouldn't be too difficult to keep a history of the snake's movement. We already keep a previous movement direction on every step in the `input` module; this can be changed to an array and just keep pushing directions into it on every step thus giving us a history of the snake's movement.
 
+### Scoring System
+
+Some sort of scoring system. Simplest idea is to just keep track of the food eaten. It might make sense to take game speed into account here.
+
 ### Rendering Optimization
 
 Current rendering code is a nested loop that goes through all the tiles and rerenders them on each frame. This is O(n^2) and can be slow on large maps. Snake is a simple enough game for this to be unnoticeable but it can still be improved.
