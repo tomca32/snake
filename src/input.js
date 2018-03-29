@@ -58,7 +58,6 @@ document.addEventListener('keydown', (e) => {
       break;
     case "p":
     case "P":
-      console.log('pause');
       togglePause();
       return;
     default:

@@ -12,13 +12,22 @@ It's Snake. You know how to play it. Use the cursor keys or `WASD` to change sna
 
 Running `yarn run dev` will start the development mode which will watch files and recompile and won't minify.
 
+## Features
+
+- Snake
+- Food
+- Walls
+- Adjustable speed - use the buttons in the top-left corner
+- Pause - press `p`
+- Immediate restart on death
+
 ## Lessons Learned
 
-### Green and grey tiles next to each other cause optical illusions on a screen with f.lux enabled
+### Green and grey tiles next to each other cause optical illusions on a crappy screen with f.lux enabled
 
 ![green and grey optical illusion](docs/optical_illusion.png)
 
-In the above image, then f.lux is enabled, it looks like the wall next to the green snake is redish in hue. I was certain this was a rendering bug somewhere. It's not; it's an optical illusion, or a f.lux artifact. The wall is grey.
+In the above image, when f.lux is enabled, and you have a crappy screen, it looks like the wall next to the green snake is redish in hue. I was certain this was a rendering bug somewhere. It's not; it's an optical illusion, or a f.lux artifact. The wall is grey.
 
 ![green and grey optical illusion](docs/optical_illusion_zoomed_in.png)
 
@@ -68,4 +77,4 @@ Some sort of scoring system. Simplest idea is to just keep track of the food eat
 
 ### Rendering Optimization
 
-Current rendering code is a nested loop that goes through all the tiles and rerenders them on each frame. This is O(n^2) and can be slow on large maps. Snake is a simple enough game for this to be unnoticeable but it can still be improved.
+Current rendering code is a nested loop that goes through all the tiles and rerenders them on each frame. This is `O(n^2)`, where `n` is map surface area, and can be slow on large maps. Snake is a simple enough game for this to be unnoticeable but it can still be improved.
