@@ -86,3 +86,7 @@ Crazy idea, but multiplayer deathmatch would be cool. Multiple snakes on the sam
 ### Prebuilt maps
 
 Snakes on a plane!
+
+### Teleporter Tiles
+
+Tiles that transport whatever is onto them into some other tile. Better have quick reflexes if the exit tile is right next to a wall. For bonus excitement in multiplayer, make the exit tile change after every use.
