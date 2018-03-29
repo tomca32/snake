@@ -1,3 +1,5 @@
+import {togglePause} from './pause';
+
 function directionUp(position) {
   return {
     x: position.x,
@@ -46,6 +48,11 @@ document.addEventListener('keydown', (e) => {
     case "ArrowDown":
       newDirection = directionDown;
       break;
+    case "p":
+    case "P":
+      console.log('pause');
+      togglePause();
+      return;
     default:
       return;
   }

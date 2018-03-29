@@ -3,6 +3,7 @@ import {initializeGrid, START_POSITION} from './grid';
 import {initializeCanvas, redrawCanvas} from './drawing';
 import Snake from './models/Snake';
 import {initializeDefaultDirections, inputStep} from './input';
+import {isPaused} from './pause';
 
 const SPEED = {
   slow: 200,
@@ -22,12 +23,13 @@ function startGame() {
   initializeDefaultDirections();
 
   let loop = setTimeout(function step() {
-    snakeHead = snakeHead.step(inputStep());
-    redrawCanvas();
-    if (!snakeHead.alive) {
-      return startGame();
+    if (!isPaused) {
+      snakeHead = snakeHead.step(inputStep());
+      redrawCanvas();
+      if (!snakeHead.alive) {
+        return startGame();
+      }
     }
-
     loop = setTimeout(step, stepDuration);
   }, stepDuration);
 }
