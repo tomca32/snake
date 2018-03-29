@@ -1,3 +1,7 @@
+## How to Play
+
+It's Snake. You know how to play it. Use the cursor keys to change snake direction.
+
 ## How to Run
 
 - `git clone` this repo

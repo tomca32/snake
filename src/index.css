@@ -17,3 +17,17 @@ html, body {
   top: 50%;
   transform: translateY(-50%);
 }
+
+.config-button {
+  cursor: pointer;
+}
+
+.config-section {
+  opacity: 0.3;
+  transition: opacity 0.3s;
+  position: absolute;
+}
+
+.config-section:hover {
+  opacity: 1;
+}

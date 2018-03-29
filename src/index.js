@@ -4,7 +4,14 @@ import {initializeCanvas, redrawCanvas} from './drawing';
 import Snake from './models/Snake';
 import {initializeDefaultDirections, inputStep} from './input';
 
-const STEP_DURATION = 100;
+const SPEED = {
+  slow: 200,
+  normal: 100,
+  fast: 50,
+  ludicrous: 10
+};
+
+let stepDuration = SPEED.normal;
 
 
 function startGame() {
@@ -21,8 +28,14 @@ function startGame() {
       return startGame();
     }
 
-    loop = setTimeout(step, STEP_DURATION);
-  }, STEP_DURATION);
+    loop = setTimeout(step, stepDuration);
+  }, stepDuration);
+}
+
+for (let elem of document.getElementsByClassName('speed-button')) {
+  elem.addEventListener('click', _e => {
+    stepDuration = SPEED[elem.getAttribute('data-speed')];
+  });
 }
 
 startGame();
