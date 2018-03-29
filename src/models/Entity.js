@@ -6,6 +6,9 @@ export default class Entity {
 
   constructor(position) {
     this.position = position;
+    if (position) {
+      gridSet(position, this);
+    }
   }
 
   draw() {

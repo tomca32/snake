@@ -7,11 +7,11 @@ export default class Snake extends Entity {
   color = SNAKE_COLOR;
   alive = true;
 
-  constructor(position, previousNode, child = 4) {
+  constructor(position, previousNode, numberOfChildren = 4) {
     super(position);
     this.previousNode = previousNode;
-    if (child) {
-      this.nextNode = new Snake(directionLeft(position), this, child - 1);
+    if (numberOfChildren) {
+      this.nextNode = new Snake(directionLeft(position), this, numberOfChildren - 1);
     }
   }
 
@@ -61,7 +61,6 @@ export default class Snake extends Entity {
   }
 
   collision(snake) {
-    debugger;
     snake.die();
   }
 

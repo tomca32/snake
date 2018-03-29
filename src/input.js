@@ -28,6 +28,10 @@ function directionRight(position) {
 
 let previousDirection = directionRight;
 let currentDirection = directionRight;
+// queuedDirection is used for queuing up the next step, for example if the player presses two key strokes in rapid succession
+// with the interval between them faster than the step interval of the main loop, we want to enqueue the second keystroke to fire on the following step
+// rather than making it overwrite the current one
+let queuedDirection = void 0;
 
 document.addEventListener('keydown', (e) => {
   let newDirection;
@@ -44,18 +48,31 @@ document.addEventListener('keydown', (e) => {
     case "ArrowDown":
       newDirection = directionDown;
       break;
+    default:
+      return;
   }
-  if (isValidDirection(newDirection)) {
+  if (!areOppositeDirections(previousDirection, newDirection) && !directionChangedThisStep()) {
     currentDirection = newDirection;
+    queuedDirection = void 0;
+  } else if (currentDirection !== previousDirection) {
+    queuedDirection = newDirection;
   }
 });
 
-function isValidDirection(newDirection) {
-  return newDirection(previousDirection({x: 0, y: 0})).x !== 0;
+function areOppositeDirections(d1, d2) {
+  let result = d1(d2({x: 0, y: 0}));
+  return result.x === 0 && result.y === 0;
 }
 
 function inputStep() {
   previousDirection = currentDirection;
+  if (queuedDirection) {
+    currentDirection = queuedDirection;
+  }
+}
+
+function directionChangedThisStep() {
+  return currentDirection !== previousDirection;
 }
 
 export {
