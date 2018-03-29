@@ -18,6 +18,7 @@ Running `yarn run dev` will start the development mode which will watch files an
 - Food
 - Walls
 - Adjustable speed - use the buttons in the top-left corner
+- Adjustable grid size (restarts the game) - use the buttons in the top-right corner
 - Pause - press `p` and a timer on unpause
 - Immediate restart on death
 

@@ -1,10 +1,18 @@
 import Wall from './models/Wall';
 import Food from './models/Food';
 
-let gridSize = {
-  x: 30,
-  y: 30
+const GRID_SIZES = {
+  small: {x: 20, y: 20},
+  normal: {x: 30, y: 30},
+  big: {x: 50, y: 40},
+  huge: {x: 100, y: 60}
 };
+
+let gridSize = {x: GRID_SIZES.normal.x, y: GRID_SIZES.normal.y};
+
+function updateGridSize(size) {
+  gridSize = size;
+}
 
 function calculateStartPosition() {
   return {
@@ -60,5 +68,7 @@ export {
   calculateStartPosition,
   gridGet,
   gridSet,
-  getRandomEmptyPosition
+  GRID_SIZES,
+  getRandomEmptyPosition,
+  updateGridSize
 }

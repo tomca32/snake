@@ -1,6 +1,6 @@
 import style from './index.css';
-import {calculateStartPosition, initializeGrid} from './grid';
-import {initializeCanvas, redrawCanvas} from './drawing';
+import {calculateStartPosition, GRID_SIZES, gridSize, initializeGrid, updateGridSize} from './grid';
+import {initializeCanvas, redrawCanvas, resizeCanvas} from './drawing';
 import Snake from './models/Snake';
 import {initializeDefaultDirections, inputStep} from './input';
 import {isPaused, pause, unpause} from './pause';
@@ -13,7 +13,7 @@ const SPEED = {
 };
 
 let stepDuration = SPEED.normal;
-
+let loop;
 
 function startGame() {
   pause();
@@ -24,7 +24,7 @@ function startGame() {
   initializeDefaultDirections();
   unpause();
 
-  let loop = setTimeout(function step() {
+  loop = setTimeout(function step() {
     if (!isPaused) {
       snakeHead = snakeHead.step(inputStep());
       redrawCanvas();
@@ -37,8 +37,17 @@ function startGame() {
 }
 
 for (let elem of document.getElementsByClassName('speed-button')) {
-  elem.addEventListener('click', _e => {
+  elem.addEventListener('click', () => {
     stepDuration = SPEED[elem.getAttribute('data-speed')];
+  });
+}
+
+for (let elem of document.getElementsByClassName('size-button')) {
+  elem.addEventListener('click', () => {
+    updateGridSize(GRID_SIZES[elem.getAttribute('data-size')]);
+    resizeCanvas();
+    clearTimeout(loop);
+    startGame();
   });
 }
 

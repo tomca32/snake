@@ -60,5 +60,6 @@ export {
   initializeCanvas,
   ctx,
   tileSize,
-  redrawCanvas
+  redrawCanvas,
+  resizeCanvas
 }
