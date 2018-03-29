@@ -37,15 +37,23 @@ document.addEventListener('keydown', (e) => {
   let newDirection;
   switch (e.key) {
     case "ArrowLeft":
+    case "a":
+    case "A":
       newDirection = directionLeft;
       break;
     case "ArrowRight":
+    case "d":
+    case "D":
       newDirection = directionRight;
       break;
     case "ArrowUp":
+    case "w":
+    case "W":
       newDirection = directionUp;
       break;
     case "ArrowDown":
+    case "s":
+    case "S":
       newDirection = directionDown;
       break;
     case "p":
