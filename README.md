@@ -1,3 +1,13 @@
+## How to Run
+
+- `git clone` this repo
+- `cd` into the directory
+- `yarn` or `npm install`
+- `yarn run build` or `npm run build`
+- `open dist/index.html`
+
+Running `yarn run dev` will start the development mode which will watch files and recompile and won't minify.
+
 ## Lessons Learned
 
 ### Green and grey tiles next to each other cause optical illusions on a screen with f.lux enabled
