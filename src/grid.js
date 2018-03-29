@@ -6,10 +6,12 @@ let gridSize = {
   y: 30
 };
 
-const START_POSITION = {
-  x: 15,
-  y: 15
-};
+function calculateStartPosition() {
+  return {
+    x: Math.floor(gridSize.x  / 2),
+    y: Math.floor(gridSize.y / 2)
+  }
+}
 
 let grid;
 
@@ -55,7 +57,7 @@ export {
   initializeGrid,
   gridSize,
   grid,
-  START_POSITION,
+  calculateStartPosition,
   gridGet,
   gridSet,
   getRandomEmptyPosition

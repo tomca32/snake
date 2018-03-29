@@ -1,5 +1,5 @@
 import style from './index.css';
-import {initializeGrid, START_POSITION} from './grid';
+import {calculateStartPosition, initializeGrid} from './grid';
 import {initializeCanvas, redrawCanvas} from './drawing';
 import Snake from './models/Snake';
 import {initializeDefaultDirections, inputStep} from './input';
@@ -17,7 +17,7 @@ let stepDuration = SPEED.normal;
 
 function startGame() {
   initializeGrid();
-  let snakeHead = new Snake(START_POSITION);
+  let snakeHead = new Snake(calculateStartPosition());
   initializeCanvas(document.getElementById('app'));
   redrawCanvas();
   initializeDefaultDirections();
