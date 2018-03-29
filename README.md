@@ -78,3 +78,11 @@ Some sort of scoring system. Simplest idea is to just keep track of the food eat
 ### Rendering Optimization
 
 Current rendering code is a nested loop that goes through all the tiles and rerenders them on each frame. This is `O(n^2)`, where `n` is map surface area, and can be slow on large maps. Snake is a simple enough game for this to be unnoticeable but it can still be improved.
+
+### Multiplayer
+
+Crazy idea, but multiplayer deathmatch would be cool. Multiple snakes on the same field battling for dominance and trying to trap each other with their bodies. Two ways to win, be the largest snake before the timer expires, say 5 minutes, or be the last snake standing/crawling.
+
+### Prebuilt maps
+
+Snakes on a plane!
