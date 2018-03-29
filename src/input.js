@@ -66,7 +66,7 @@ document.addEventListener('keydown', (e) => {
   if (!areOppositeDirections(previousDirection, newDirection) && !directionChangedThisStep()) {
     currentDirection = newDirection;
     queuedDirection = void 0;
-  } else if (currentDirection !== previousDirection) {
+  } else {
     queuedDirection = newDirection;
   }
 });
@@ -77,6 +77,10 @@ function areOppositeDirections(d1, d2) {
 }
 
 function inputStep() {
+  if (areOppositeDirections(previousDirection, currentDirection)) {
+    currentDirection = queuedDirection;
+    return previousDirection;
+  }
   previousDirection = currentDirection;
   if (queuedDirection) {
     currentDirection = queuedDirection;
