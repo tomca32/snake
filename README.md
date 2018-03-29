@@ -1,14 +1,14 @@
 ## Lessons Learned
 
-### Green and grey tiles next to each other cause optical illusions
+### Green and grey tiles next to each other cause optical illusions on a screen with f.lux enabled
 
 ![green and grey optical illusion](docs/optical_illusion.png)
 
-In the above image, it looks like the wall next to the green snake is redish in hue. I was certain this was a rendering bug somewhere. It's not; it's an optical illusion. The wall is grey.
+In the above image, then f.lux is enabled, it looks like the wall next to the green snake is redish in hue. I was certain this was a rendering bug somewhere. It's not; it's an optical illusion, or a f.lux artifact. The wall is grey.
 
 ![green and grey optical illusion](docs/optical_illusion_zoomed_in.png)
 
-This is the same image zoomed in, as you can see, the wall is grey. I don't want to admit how much time I wasted on this.
+This is the same image zoomed in, and even with f.lux enabled, the wall is grey. I don't want to admit how much time I wasted on this.
 
 ### Determining direction from user input is complex
 
