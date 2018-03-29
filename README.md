@@ -33,6 +33,9 @@ In both cases, the user did exactly the same thing, they pressed two keys in rap
 
 The solution is to enable queuing up the following direction change even if the current one didn't execute yet. This complicates code a bit but makes for a much better UX.
 
+### Unit Test Movement Logic
+
+Should have done TDD on the movement logic. I managed to, accidentally, break it many. many times. That logic is a perfect candidate for unit testing since it's mostly just pure functions.
 
 ## Things to add or improve on
 
