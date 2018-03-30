@@ -26,6 +26,7 @@ Running `yarn run dev` will start the development mode which will watch files an
 - Snake
 - Food
 - Walls
+- Fully responsive, works on any screen size (you still need to have the keyboard though)
 - Adjustable speed - use the buttons in the top-left corner
 - Adjustable grid size (restarts the game) - use the buttons in the top-right corner
 - Pause - press `p`
@@ -102,3 +103,7 @@ Snakes on a plane!
 ### Teleporter Tiles
 
 Tiles that transport whatever is onto them into some other tile. Better have quick reflexes if the exit tile is right next to a wall. For bonus excitement in multiplayer, make the exit tile change after every use.
+
+### Other devices
+
+Make it work on touchscreen, maybe listen to swipe directions or touches at the edge of the screen.
