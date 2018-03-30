@@ -4,11 +4,20 @@ It's Snake. You know how to play it. Use the cursor keys or `WASD` to change sna
 
 ## How to Run
 
-- `git clone` this repo
-- `cd` into the directory
-- `yarn` or `npm install`
-- `yarn run build` or `npm run build`
-- `open dist/index.html`
+Open up [snake.tomislav.io](http://snake.tomislav.io) and give it a shot.
+
+Alternatively, you could get it from github here: https://github.com/tomca32/snake
+
+
+```sh
+git clone git@github.com:tomca32/snake.git
+cd snake
+yarn # or npm install
+yarn run build # or npm run build
+open dist/index.html
+```
+
+if you got this as a part of the zip package, then it should be prebuilt and you can just open the `dist/index.html` file.
 
 Running `yarn run dev` will start the development mode which will watch files and recompile and won't minify.
 
@@ -19,20 +28,18 @@ Running `yarn run dev` will start the development mode which will watch files an
 - Walls
 - Adjustable speed - use the buttons in the top-left corner
 - Adjustable grid size (restarts the game) - use the buttons in the top-right corner
-- Pause - press `p` and a timer on unpause
+- Pause - press `p`
 - Immediate restart on death
 
 ## Lessons Learned
 
 ### Green and grey tiles next to each other cause optical illusions on a crappy screen with f.lux enabled
 
-![green and grey optical illusion](docs/optical_illusion.png)
+![green and grey optical illusion](docs/optical_illusion.png) ![green and grey optical illusion](docs/illusion_photo.png)
 
 In the above image, when f.lux is enabled, and you have a crappy screen, it looks like the wall next to the green snake is redish in hue. I was certain this was a rendering bug somewhere. It's not; it's an optical illusion, or a f.lux artifact. The wall is grey.
 
-![green and grey optical illusion](docs/optical_illusion_zoomed_in.png)
-
-This is the same image zoomed in, and even with f.lux enabled, the wall is grey. I don't want to admit how much time I wasted on this.
+I don't want to admit how much time I wasted on this.
 
 ### Determining direction from user input is complex
 
@@ -63,10 +70,14 @@ Should have done TDD on the movement logic. I managed to, accidentally, break it
 
 ## Things to add or improve on
 
+### Improve the UI
+
+There is really no UI at the moment. If we want to have speed options, map size options, and other ideas listed below, there needs to be a more coherent UI than just a couple of buttons thrown in the corners.
+
 ### Map Editor
 
 There is a potential for the map editor here. Maps could be encoded in text, or even simpler, just a set of coordinates where the walls are located. That can be parsed and initialized by the grid module.
-I have done something similar in my Pacman game which you can find on my [github](https://github.com/tomca32/).
+I have done something similar in my Pacman game which you can find here: https://github.com/tomca32/pacman
 
 ### Replays
 
